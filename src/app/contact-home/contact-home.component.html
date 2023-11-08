@@ -39,7 +39,8 @@
       </ng-container>
   
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    // pasamos las columnas y coge cada una de las filas, cuando pinchamos en las flas llama al metodo openDetailForm
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;" (click)="openDetailForm(row)"></tr>
   </table>
   
   
