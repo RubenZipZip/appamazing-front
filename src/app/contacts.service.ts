@@ -28,4 +28,11 @@ export class ContactsService {
     // es post pq le paso el id del contacto en el body  
     return this.http.post(url, body,{headers}); //(llama al back no al postman, post pq esta asi en el Controller de java) llama al metodo de back con la url que retorna el body
   }
+
+  newContact(contact: any): void{
+    const url = 'http://localhost:30030/contacts/add';
+    const headers =new HttpHeaders().set('Content-Type', 'application/json');
+    const body = contact;
+    this.http.post(url, body, {headers}).subscribe(); // no se pone data pq no devuelve dato
+  }
 }
