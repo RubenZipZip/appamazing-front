@@ -24,11 +24,11 @@ export class ProductHomeComponent implements OnInit  {
  openDetailForm(row: any){
   // metodo navigate la ruta del formulario+campo que clickcamos
   this.router.navigate(['/product', row.id]);
-  // tiene que enrutar a contact detail , vamos al constructor y añadimos private router:Router
+  // tiene que enrutar a product detail , vamos al constructor y añadimos private router:Router
 
  }
  
- displayedColumns: string[] = ['id', 'stock', 'price', 'active', 'date_added'];
+ displayedColumns: string[] = ['id', 'name', 'stock', 'price', 'active', 'date_added'];
   
   
   }

@@ -9,6 +9,7 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class ProductDetailComponent implements OnInit {
   products: any;
+  // creamos constructor para llamar al servicio
   constructor(private productsService: ProductsService, private route: ActivatedRoute) { }
 
   ngOnInit() {

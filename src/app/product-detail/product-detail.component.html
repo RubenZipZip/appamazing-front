@@ -1,1 +1,24 @@
-<p>product-detail works!</p>
+
+<mat-card class="card">
+    <mat-card-title>Detalle de producto</mat-card-title>
+    <mat-card-content class="card-content">
+    <p>
+         <strong>Id:</strong> {{products.id}}
+    </p>
+    <p>
+        <strong>Nombre:</strong>{{products.name}} 
+    </p>
+    <p>
+        <strong>Stock:</strong>{{products.stock}}
+    </p>
+    <p>
+        <strong>Price:</strong>{{products.price}}
+    </p>
+    <p>
+        <strong>Disponibilidad:</strong> {{products.active}}
+    </p>
+    <p>
+        <strong>Fecha de recepción:</strong> {{products.date_added}}
+    </p>
+</mat-card-content>
+</mat-card>
