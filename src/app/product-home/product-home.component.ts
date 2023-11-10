@@ -28,7 +28,7 @@ export class ProductHomeComponent implements OnInit  {
 
  }
  
- displayedColumns: string[] = ['id', 'name', 'stock', 'price', 'active', 'date_added'];
+ displayedColumns: string[] = ['id', 'name', 'stock', 'price', 'active', 'date_added', 'category'];
   
   
   }

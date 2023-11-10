@@ -11,7 +11,6 @@ import { ContactNewComponent } from './contact-new/contact-new.component';
 const routes: Routes = [
   {path: 'contacts', component:ContactHomeComponent},
   {path: 'contact/new', component:ContactNewComponent},
-
   {path: 'contact/:id', component:ContactDetailComponent},
   {path: 'products', component:ProductHomeComponent},
   {path: 'product/:id', component:ProductDetailComponent},

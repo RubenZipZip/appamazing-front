@@ -26,7 +26,7 @@ export class ContactNewComponent implements OnInit {
       name: this.name,
       surname1: this.surname1,
       surname2: this.surname2,
-      phone: this.telephone,
+      telephone: this.telephone,
       email: this.email
 
 

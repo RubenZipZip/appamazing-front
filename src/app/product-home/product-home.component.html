@@ -37,6 +37,11 @@
         <td mat-cell *matCellDef="let products"> {{products.date_added}} </td>
       </ng-container>
 
+      <ng-container matColumnDef="category">
+        <th mat-header-cell *matHeaderCellDef>category</th>
+        <td mat-cell *matCellDef="let products"> {{products.categories?.name}} </td>
+      </ng-container>
+
         
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
     // pasamos las columnas y coge cada una de las filas, cuando pinchamos en las flas llama al metodo openDetailForm
