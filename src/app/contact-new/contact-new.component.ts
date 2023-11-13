@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ContactsService } from '../contacts.service';
+import { Contact } from '../model/Contact';
 
 @Component({
   selector: 'app-contact-new',
@@ -8,13 +9,15 @@ import { ContactsService } from '../contacts.service';
   styleUrls: ['./contact-new.component.css']
 })
 export class ContactNewComponent implements OnInit {
-
+  contact: Contact = new Contact();
+  /*
   name: string;
   surname1: string;
   surname2: string;
   telephone: string;
   email: string;
- 
+  
+ */
 
   constructor(private router: Router, private contactsService: ContactsService) { }
 
@@ -23,11 +26,12 @@ export class ContactNewComponent implements OnInit {
 
   newContact(){
     const contact ={
-      name: this.name,
-      surname1: this.surname1,
-      surname2: this.surname2,
-      telephone: this.telephone,
-      email: this.email
+      name: this.contact.name,
+      surname1: this.contact.surname1,
+      surname2: this.contact.surname2,
+      telephone: this.contact.telephone,
+      email: this.contact.email,
+      puestoTrabajo: this.contact.puestoTrabajo.id
 
 
     }

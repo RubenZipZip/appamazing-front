@@ -1,36 +1,35 @@
+
 <mat-card class="card">
-    <mat-card-title>Añadir contacto</mat-card-title>
+    <mat-card-title>Añadir producto</mat-card-title>
     <mat-card-content class="car-content">
-        <form (submit)="newContact()">
+        <form (submit)="newProduct()">
             <mat-form-field appearance="outline">
                 <mat-label>Nombre</mat-label>
-                <input matInput type="text" name="contact.name" [(ngModel)]="contact.name">
+                <input matInput type="text" name="product.name" [(ngModel)]="product.name">
             </mat-form-field>
             <mat-form-field appearance="outline">
-                <mat-label>Apellido1</mat-label>
-                <input matInput type="text" name="contact.surname1" [(ngModel)]="contact.surname1">
+                <mat-label>Stock</mat-label>
+                <input matInput type="number" name="product.stock" [(ngModel)]="product.stock">
             </mat-form-field>
 
             <mat-form-field appearance="outline">
-                <mat-label>Apellido2</mat-label>
-                <input matInput type="text" name="contact.surname2" [(ngModel)]="contact.surname2">
+                <mat-label>Precio</mat-label>
+                <input matInput type="number" name="product.price" [(ngModel)]="product.price">
                 </mat-form-field>
 
                 <mat-form-field appearance="outline">
-                    <mat-label>Teléfono</mat-label>
-                    <input matInput type="text" name="contact.telephone" [(ngModel)]="contact.telephone">
+                    <mat-label>Disponible</mat-label>
+                    <input matInput type="text" name="product.active" [(ngModel)]="product.active">
                 </mat-form-field>
 
                 <mat-form-field appearance="outline">
-                    <mat-label>Email</mat-label>
-                    <input matInput type="email" name="contact.email" [(ngModel)]="contact.email">
+                    <mat-label>Fecha de entrada</mat-label>
+                    <input matInput type="date" name="product.data_added" [(ngModel)]="product.date_added">
                 </mat-form-field>
-            
                 <mat-form-field appearance="outline">
-                    <mat-label>Puesto</mat-label>
-                    <input matInput type="text" name="contact.puestoTrabajo" [(ngModel)]="contact.puestoTrabajo">
+                    <mat-label>Category</mat-label>
+                    <input matInput type="text" name="category" [(ngModel)]="category.id">
                 </mat-form-field>
-            
 
                 <div class="button">
                     <button mat-raised-button color="primary" type="submit">

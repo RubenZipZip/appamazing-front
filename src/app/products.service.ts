@@ -28,4 +28,11 @@ getProduct(p_id: number): Observable<any>{
   return this.http.post(url, body,{headers}); //llama al back no al postman, post pq esta asi en el Controller de java) llama al metodo de back con la url que retorna el body
 
 }
+newProduct(product: any): void{
+  const url = 'http://localhost:30030/products/add';
+  const headers =new HttpHeaders().set('Content-Type', 'application/json');
+  const body = product;
+  this.http.post(url, body, {headers}).subscribe(); // no se pone data pq no devuelve dato
+}
+
 }

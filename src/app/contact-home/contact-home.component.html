@@ -37,6 +37,11 @@
         <th mat-header-cell *matHeaderCellDef> email </th>
         <td mat-cell *matCellDef="let contact"> {{contact.email}} </td>
       </ng-container>
+
+      <ng-container matColumnDef="puestoTrabajo">
+        <th mat-header-cell *matHeaderCellDef> puestoTrabajo</th>
+        <td mat-cell *matCellDef="let contact"> {{contact.puestoTrabajo}} </td>
+      </ng-container>
   
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
     // pasamos las columnas y coge cada una de las filas, cuando pinchamos en las flas llama al metodo openDetailForm

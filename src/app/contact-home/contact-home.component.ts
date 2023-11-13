@@ -30,7 +30,7 @@ export class ContactHomeComponent implements OnInit  {
 
  }
  
- displayedColumns: string[] = ['id', 'name', 'surname1', 'surname2', 'telephone', 'email'];
+ displayedColumns: string[] = ['id', 'name', 'surname1', 'surname2', 'telephone', 'email', 'puestoTrabajo'];
   
   
   }
