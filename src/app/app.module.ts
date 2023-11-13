@@ -3,6 +3,8 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { MatRadioModule } from '@angular/material/radio';
+
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ContactHomeComponent } from './contact-home/contact-home.component';
 import { MatButtonModule, MatCardModule, MatIconModule, MatTableModule, MatToolbarModule, MatInputModule } from '@angular/material';
@@ -22,7 +24,8 @@ import { ProductNewComponent } from './product-new/product-new.component';
     ProductHomeComponent,
     ProductDetailComponent,
     ContactNewComponent,
-    ProductNewComponent
+    ProductNewComponent,
+    
   ],
   imports: [
     BrowserModule,
@@ -35,7 +38,11 @@ import { ProductNewComponent } from './product-new/product-new.component';
     MatCardModule,
     MatIconModule,
     FormsModule,
-    MatInputModule
+    MatInputModule,
+    MatRadioModule
+    
+   
+    
   ],
   providers: [],
   bootstrap: [AppComponent]
