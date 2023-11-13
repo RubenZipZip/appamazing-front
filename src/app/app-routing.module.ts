@@ -17,6 +17,7 @@ const routes: Routes = [
   {path: 'product/:id', component:ProductDetailComponent},
   
   
+  
   // {path: 'contact/edit/:id' , component: ContacUpdateComponent}
   
 

@@ -26,6 +26,8 @@ import { ProductNewComponent } from './product-new/product-new.component';
     ContactNewComponent,
     ProductNewComponent,
     
+   
+    
   ],
   imports: [
     BrowserModule,
