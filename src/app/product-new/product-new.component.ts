@@ -3,6 +3,7 @@ import { Router} from '@angular/router';
 import { ProductsService } from '../products.service';
 import { Product } from '../model/Products';
 import { Category } from '../model/Category';
+import { CategoriesService } from '../categories.service';
 
   
   @Component ({
@@ -15,10 +16,14 @@ import { Category } from '../model/Category';
     product: Product = new Product();
 
     category : Category = new Category();
+    categories: []
    //    id_category: number;
   
-  constructor(private router: Router, private productsService: ProductsService) {}
+  constructor(private categorieService: CategoriesService, private router: Router, private productsService: ProductsService) {}
     ngOnInit() {
+      this.categorieService.getCategories().subscribe(data =>{
+        this.categories=data;
+      })
        }
 
 

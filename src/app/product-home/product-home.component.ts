@@ -16,8 +16,11 @@ export class ProductHomeComponent implements OnInit  {
 // lo que se meta en el noOnit lo carga antes del html para que la tabla no salga vacia
  ngOnInit(): void {
   this.produtsService.getProducts().subscribe(data =>{
-    this.products = data
-  })
+    this.products = data   
+    
+    })
+
+  
    
  } 
 

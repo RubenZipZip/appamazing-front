@@ -15,6 +15,7 @@ import { ProductDetailComponent } from './product-detail/product-detail.componen
 import { FormsModule } from '@angular/forms';
 import { ContactNewComponent } from './contact-new/contact-new.component';
 import { ProductNewComponent } from './product-new/product-new.component';
+import {MatSelectModule} from '@angular/material/select';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,7 @@ import { ProductNewComponent } from './product-new/product-new.component';
     ProductDetailComponent,
     ContactNewComponent,
     ProductNewComponent,
-    
+       
    
     
   ],
@@ -41,7 +42,8 @@ import { ProductNewComponent } from './product-new/product-new.component';
     MatIconModule,
     FormsModule,
     MatInputModule,
-    MatRadioModule
+    MatRadioModule,
+    MatSelectModule
     
    
     

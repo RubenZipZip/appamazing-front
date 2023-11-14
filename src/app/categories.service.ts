@@ -8,12 +8,12 @@ import { Observable } from 'rxjs';
 export class CategoriesService {
 
   constructor(private http:HttpClient) { }
-getCategories(cat_id): Observable<any> {
+getCategories(): Observable<any> {
   const url ='http://localhost:30030/categories/getAll';
-  const headers =new HttpHeaders().set('Content-Type', 'application/json'); 
-  const body = JSON.stringify ({id: cat_id}); // monta el body tal y como espera recibirlo
+  const headers =new HttpHeaders() 
+ 
   // es post pq le paso el id del contacto en el body  
-  return this.http.post(url, body,{headers}); //(llama al back no al postman, post pq esta asi en el Controller de java) llama al metodo de back con la url que retorna el body
+  return this.http.get<any>(url,{headers});
 }
 
 }
