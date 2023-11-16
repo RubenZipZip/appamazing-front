@@ -19,6 +19,9 @@ import {MatSelectModule} from '@angular/material/select';
 import { ContactEditComponent } from './contact-edit/contact-edit.component';
 import { ProductEditComponent } from './product-edit/product-edit.component';
 import { ContactDeleteComponent } from './contact-delete/contact-delete.component';
+import { ProductDeleteComponent } from './product-delete/product-delete.component';
+import { ChartsComponent } from './charts/charts.component';
+import { NgxChartsModule } from '@swimlane/ngx-charts';
 
 @NgModule({
   declarations: [
@@ -32,6 +35,9 @@ import { ContactDeleteComponent } from './contact-delete/contact-delete.componen
     ContactEditComponent,
     ProductEditComponent,
     ContactDeleteComponent,
+    ProductDeleteComponent,
+    ChartsComponent,
+    
        
    
     
@@ -52,7 +58,7 @@ import { ContactDeleteComponent } from './contact-delete/contact-delete.componen
     MatRadioModule,
     MatSelectModule,
     MatDialogModule,
-          
+    NgxChartsModule      
     
   ],
   providers: [],

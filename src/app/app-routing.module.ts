@@ -8,6 +8,8 @@ import { ContactNewComponent } from './contact-new/contact-new.component';
 import { ProductNewComponent } from './product-new/product-new.component';
 import { ContactEditComponent } from './contact-edit/contact-edit.component';
 import { ProductEditComponent } from './product-edit/product-edit.component';
+import { ChartsComponent } from './charts/charts.component';
+import { from } from 'rxjs';
 
 
 const routes: Routes = [
@@ -18,13 +20,10 @@ const routes: Routes = [
   {path: 'products', component: ProductHomeComponent},
   {path: 'product/new' , component: ProductNewComponent},
   {path: 'product/:id', component: ProductDetailComponent},
-  {path: 'product/edit/:id', component: ProductEditComponent , } 
-  
-  
-  // {path: 'contact/edit/:id' , component: ContacUpdateComponent}
-  
-
+  {path: 'product/edit/:id', component: ProductEditComponent , } ,
+  {path: '', component: ChartsComponent}
 ];
+ 
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
