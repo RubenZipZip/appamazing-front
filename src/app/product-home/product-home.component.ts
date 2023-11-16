@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ProductsService } from '../products.service';
 import { Router } from '@angular/router';
 
+
 @Component({
   selector: 'app-product-home',
   templateUrl: './product-home.component.html',

@@ -1,6 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import {  Component, OnInit } from '@angular/core';
 import { ContactsService } from '../contacts.service';
 import { Router } from '@angular/router';
+import { ContactDeleteComponent } from '../contact-delete/contact-delete.component';
+import { MatDialog } from '@angular/material';
 
 
 @Component({
@@ -11,15 +13,17 @@ import { Router } from '@angular/router';
 
 export class ContactHomeComponent implements OnInit  {
   contacts: any = [] ;
-   // creamos constructor para llamar el servicio
+   
 
-  constructor(private contactsService: ContactsService, private router: Router){}
+  constructor(private contactsService: ContactsService, private router: Router, public dialog: MatDialog){}
 
 // lo que se meta en el noOnit lo carga antes del html para que la tabla no salga vacia
  ngOnInit(): void {
   this.contactsService.getContacts().subscribe(data =>{
     this.contacts = data;
+  
   })
+
    
  } 
 
@@ -34,6 +38,9 @@ export class ContactHomeComponent implements OnInit  {
   this.router.navigate(['/contact/edit', contact]);
  }
  
+ openDeleteDialog(contactId: number): void{
+  this.dialog.open(ContactDeleteComponent, {data: {contactId: contactId}});
+ }
  displayedColumns: string[] = ['id', 'name', 'surname1', 'surname2', 'telephone', 'email', 'actions'];
   
   
