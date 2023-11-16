@@ -30,8 +30,11 @@ export class ProductHomeComponent implements OnInit  {
   // tiene que enrutar a product detail , vamos al constructor y añadimos private router:Router
 
  }
+ editProductDetail( contact: any){
+  this.router.navigate(['/product/edit', contact])
+ }
  
- displayedColumns: string[] = ['id', 'name', 'stock', 'price', 'active', 'date_added', 'category'];
+ displayedColumns: string[] = ['id', 'name', 'stock', 'price', 'active', 'date_added', 'category', 'actions'];
   
   
   }

@@ -35,11 +35,13 @@ newProduct(product: any): void{
   this.http.post(url, body, {headers}).subscribe(); // no se pone data pq no devuelve dato
 }
 
-/*
-deleteProduct(product: any): void{
-  const url = 'http://localhost:30030/products/delete';
+
+
+updateProduct(product: any): void{
+  const url = 'http://localhost:30030/products/update';
   const headers =new HttpHeaders().set('Content-Type', 'application/json');
   const body = product;
-  this.http.post(url, body, {headers}).subscribe(); // no se pone data pq no devuelve dato
-*/
+  this.http.put(url, body, {headers}).subscribe();
+
+}
 }

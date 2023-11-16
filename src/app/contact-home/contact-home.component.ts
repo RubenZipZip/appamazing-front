@@ -18,7 +18,7 @@ export class ContactHomeComponent implements OnInit  {
 // lo que se meta en el noOnit lo carga antes del html para que la tabla no salga vacia
  ngOnInit(): void {
   this.contactsService.getContacts().subscribe(data =>{
-    this.contacts = data
+    this.contacts = data;
   })
    
  } 
@@ -29,8 +29,12 @@ export class ContactHomeComponent implements OnInit  {
   // tiene que enrutar a contact detail , vamos al constructor y añadimos private router:Router
 
  }
+
+ editContactDetail(contact: any){
+  this.router.navigate(['/contact/edit', contact]);
+ }
  
- displayedColumns: string[] = ['id', 'name', 'surname1', 'surname2', 'telephone', 'email', 'puestoTrabajo'];
+ displayedColumns: string[] = ['id', 'name', 'surname1', 'surname2', 'telephone', 'email', 'actions'];
   
   
   }

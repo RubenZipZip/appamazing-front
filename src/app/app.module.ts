@@ -16,6 +16,8 @@ import { FormsModule } from '@angular/forms';
 import { ContactNewComponent } from './contact-new/contact-new.component';
 import { ProductNewComponent } from './product-new/product-new.component';
 import {MatSelectModule} from '@angular/material/select';
+import { ContactEditComponent } from './contact-edit/contact-edit.component';
+import { ProductEditComponent } from './product-edit/product-edit.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +28,8 @@ import {MatSelectModule} from '@angular/material/select';
     ProductDetailComponent,
     ContactNewComponent,
     ProductNewComponent,
+    ContactEditComponent,
+    ProductEditComponent,
        
    
     
@@ -43,7 +47,8 @@ import {MatSelectModule} from '@angular/material/select';
     FormsModule,
     MatInputModule,
     MatRadioModule,
-    MatSelectModule
+    MatSelectModule,
+    
     
    
     
