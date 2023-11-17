@@ -18,13 +18,52 @@
   
 </div>
 
-<div><p><strong>Lenght of name</strong></p></div>
+<div><p><strong>Lenght of name</strong></p>
+<ngx-charts-line-chart 
+[view]="[400, 300]"
+ [results]="contactsByFullName" 
+ [xAxis]="true" 
+ [yAxis]="true"
+[legend]="false"
+ [showXAxisLabel]="true"
+ [showYAxisLabel]="true" 
+  xAxisLabel="Full Name Length"
+yAxisLabel="Number of contacts">
+
+
+</ngx-charts-line-chart>
+
+
+</div>
 </div>
 
 <div class="chart-row">
-    <div><p><strong>Extensions</strong></p></div>
+    <div><p><strong>Extensions</strong></p>
+    <ngx-charts-pie-chart 
+    [view]="[400,300]"
+    [results]="emailExtensions"
+    [labels]="true"
+    [doughnut]="true">
+    </ngx-charts-pie-chart>
     
-    <div><p><strong>Prefix</strong></p></div>
+    
+    </div>
+  
+    
+    <div><p><strong>Prefix</strong></p>
+    <ngx-charts-bar-horizontal
+  [view]="[400,300]"
+  [results]="phonePrefixData"
+  [xAxis]="true"
+  [yAxis]="true"
+  [showXAxisLabel]="true" 
+  [showXAxisLabel]="true"
+  xAxisLabel="Number Contacts"
+  yAxisLabel="Contacts"
+></ngx-charts-bar-horizontal>
+
+  </div>
+
     </div>
     </mat-card-content>
 </mat-card>
