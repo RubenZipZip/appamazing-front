@@ -17,7 +17,7 @@ export class ProductDeleteComponent implements OnInit {
 
   constructor(private productService: ProductsService, public dialogRef: MatDialogRef<ProductDeleteComponent>,
     @Inject(MAT_DIALOG_DATA) public data: { productId: number }, private router: Router) {
-    this.productId = data.productId; { } }
+    this.productId = data.productId; }
 
     ngOnInit() {
     }
@@ -29,7 +29,7 @@ export class ProductDeleteComponent implements OnInit {
         return false;
       }
       this.router.onSameUrlNavigation = 'reload';
-      this.router.navigate(['/product']);
+      this.router.navigate(['/products']);
     }
   }
 

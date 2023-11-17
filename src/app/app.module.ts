@@ -42,7 +42,7 @@ import { NgxChartsModule } from '@swimlane/ngx-charts';
    
     
   ],
-  entryComponents: [ContactDeleteComponent],
+  entryComponents: [ContactDeleteComponent, ProductDeleteComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,

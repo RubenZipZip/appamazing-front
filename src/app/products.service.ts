@@ -46,7 +46,7 @@ updateProduct(product: any): void{
 }
 
 deleteProduct(productId: number): void{
-  const url = 'http://localhost:30030/contacts/delete';
+  const url = 'http://localhost:30030/products/delete';
   const body = { id: productId};
   const options = {
     body: body,
