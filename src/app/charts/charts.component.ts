@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ContactsService } from '../contacts.service';
+import { ProductsService } from '../products.service';
 
 @Component({
   selector: 'app-charts',
@@ -8,19 +9,28 @@ import { ContactsService } from '../contacts.service';
 })
 export class ChartsComponent implements OnInit {
   initialLetter = [];
-  contactsByFullName =[]
-  emailExtensions= []
-  phonePrefixData= []
+  contactsByFullName =[];
+  emailExtensions= [];
+  phonePrefixData= [];
+  productsByFullName= [];
+ 
 
-  constructor(private contactsService: ContactsService) { }
+  constructor(private contactsService: ContactsService, private productsService: ProductsService) { }
 
   ngOnInit() {
-    this.contactsService.getContacts().subscribe(data => {
+    this.contactsService.getContacts().subscribe(data => { //
       this.initialLetter = this.calculateInitialLettersData(data);
       this.contactsByFullName = this.calculateContactsByFulNameDaTA(data);
       this.emailExtensions = this.calculateEmailExtensionsData(data);
       this.phonePrefixData = this.generatePhonePrefixData(data);
+     
+      
     })
+  
+    this.productsService.getProducts().subscribe(data =>{
+    this.productsByFullName = this.calculateProductsByFulNameDaTA(data);
+    })
+    
   }
 
   //itera por cada uno de los contactos, con los datos result y contact
@@ -119,8 +129,45 @@ calculateEmailExtensionsData(contacts: any[]): any{
   }
   return phonePrefixData;
 }
+
+
+
+
+calculateProductsByFulNameDaTA(products: any[]): any{
+
+  let tempProductsByFullName =[{
+    name: 'Products',
+    series: []
+  }];
+
+  products.forEach(product =>{
+
+    const fullName = product.name ;
+    const size = fullName.length; // tamaño del nombre
+    const range =`${size - (size % 2)} - ${size - (size % 2) + 4} ch.`;
+    let existingRange = tempProductsByFullName[0].series.find(item => item.name === range); //para saber si esta el rango en existingRange
+    if(existingRange)  {
+      
+      existingRange.value++;
+
+    }else{
+      tempProductsByFullName[0].series.push({name: range, value:1});
+    }
+ 
+  });
+  return tempProductsByFullName.map(entry =>{
+  
+ return{
+      ...entry, //recorre entry y ordena el array series [], compara dos elementos dentro del sor por name
+      series: entry.series.sort((a,b) => Number(a.name.split('_')[0]) - Number(b.name.split('_')[0])) // ordenar mapa , clave-valor
+   }
+  })
+}
+
 }
 
 
+  
+  
 
 
