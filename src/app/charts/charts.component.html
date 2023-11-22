@@ -78,7 +78,30 @@ yAxisLabel="Number of contacts">
     </ngx-charts-line-chart>
   
 </div>
+<div>
+  <p><strong>Initial Products</strong></p>
+  <ngx-charts-bar-vertical
+   [view]="[400,300]" 
+  [results]="initialProducts"
+   [xAxis]="true" 
+   [yAxis] ="true" 
+   [legend]="false"
+    [showXAxisLabel]="true"
+    [showYAxisLabel]="true"
+  xAxisLabel="Initial of product" 
+    yAxisLabel="Number of products" >
+  </ngx-charts-bar-vertical>
+
+
+  
+    
+    
     </div>
+
+</div>
+
+
+   
     </mat-card-content>
 </mat-card>
 

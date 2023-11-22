@@ -13,7 +13,8 @@ export class ChartsComponent implements OnInit {
   emailExtensions= [];
   phonePrefixData= [];
   productsByFullName= [];
- 
+  initialProducts = [];
+  
 
   constructor(private contactsService: ContactsService, private productsService: ProductsService) { }
 
@@ -23,13 +24,17 @@ export class ChartsComponent implements OnInit {
       this.contactsByFullName = this.calculateContactsByFulNameDaTA(data);
       this.emailExtensions = this.calculateEmailExtensionsData(data);
       this.phonePrefixData = this.generatePhonePrefixData(data);
-     
+    
       
     })
   
     this.productsService.getProducts().subscribe(data =>{
     this.productsByFullName = this.calculateProductsByFulNameDaTA(data);
-    })
+    this.initialProducts =this.InitialProductsData(data);
+    
+   
+     
+  })
     
   }
 
@@ -161,12 +166,27 @@ calculateProductsByFulNameDaTA(products: any[]): any{
       ...entry, //recorre entry y ordena el array series [], compara dos elementos dentro del sor por name
       series: entry.series.sort((a,b) => Number(a.name.split('_')[0]) - Number(b.name.split('_')[0])) // ordenar mapa , clave-valor
    }
-  })
+  });
+}
+
+  InitialProductsData(products: any[]): any {
+    return products.reduce((result, products) => {
+      const initial = products.name.charAt(0).toUpperCase(); //inicial del nombre
+      if (result.find(item => item.name === initial)) { // busca en el array un objeto nombre con la inicial
+        result.find(item => item.name === initial).value++;
+      } else {
+        result.push({ name: initial, value: 1 });
+      }
+      return result;
+      // inicializamos con array vacio que se va a ir rellenando con el return
+
+    }, [])
+
+
+
 }
 
 }
-
-
   
   
 
